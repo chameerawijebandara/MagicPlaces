@@ -16,15 +16,15 @@
         require_once __DIR__ . '/database/db_connect.php';
 
         //connect to the database
-		$db = new DB_CONNECT();
-		$con = $db->connect();
+		$db_con = new DB_CONNECT();
+		$db = $db_con->connect();
 		
 		//$type = $_GET['type'];		
         $sql=$_GET['sql'];
 		
 		//$sql="SELECT * FROM wp_users";
-		print($type);
-        print($sql);
+		//print($type);
+        //print($sql);
 		
 		/*
 		if($type=='select')
@@ -39,7 +39,15 @@
 			print("Wrong type!");
 		}
 		*/
-		$result = $con->query($sql);
-		echo(json_encode($result));
+		if(!$result = $db->query($sql)){
+			die('There was an error running the query [' . $db->error . ']');
+		}
+		
+		//echo(json_encode($result));
+		
+		while($row = $result->fetch_assoc()){
+			echo(json_encode($row));
+			echo '</br>';
+		}
 	}
 ?>       

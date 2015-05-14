@@ -11,8 +11,8 @@
 	 * All database connection variables
 	 */
 
-	define('DB_USER', "root"); // db user
-	define('DB_PASSWORD', ""); // db password
-	define('DB_DATABASE', "wordpress"); // database name
-	define('DB_SERVER', "localhost"); // db server
+	define('DB_USER', "magic_places_usr"); // db user
+	define('DB_PASSWORD', "vfjfv64GVgcg6GBChc"); // db password
+	define('DB_DATABASE', "magic_places"); // database name
+	define('DB_SERVER', "localhost"); // db server 
 ?>
